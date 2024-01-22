@@ -1,0 +1,212 @@
+# from selenium import webdriver
+from urllib import response
+
+from selenium.webdriver.chrome.options import Options
+from login import driver
+from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
+import pandas.compat.compressors
+import numpy as np
+
+# from webdriver_manager.chrome import ChromeDriverManager
+# from selenium.webdriver.common.keys import Keys
+# from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException, StaleElementReferenceException
+# from urllib.parse import urlparse
+# Configure Chrome options
+chrome_options = Options()
+chrome_options.add_argument("--disable-notifications")  # Block notifications
+# import time
+from selenium.webdriver.common.by import By
+# from selenium.webdriver.common.action_chains import ActionChains
+# from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.support.ui import WebDriverWait
+# import getpass
+import pandas as pd
+import pickle as pickle
+# import os
+# import urllib
+# from PIL import Image
+# from io import BytesIO
+# import csv
+# import loginid
+import requests
+
+login_credientals = {
+    'Instagram': {'username': 'owlrapid123', 'password': 'owlrap'},  # Add other social accounts as needed
+    'Facebook': {'username': 'Aqsa Waheed', 'password': 'devvoops'},  # Add other social accounts as needed
+    'reddit': {'username': 'Aqsawaheed', 'password': 'aqsa0304'},  # Add other social accounts as needed
+    'linkedin': {'username': 'aqsawaheed02@gmail.com', 'password': 'aqsa9891'},  # Add other social accounts as needed
+}
+with open('pickle.pkl', 'wb') as f:  # open a text file
+    pickle.dump(login_credientals, f) # serialize the list
+f.close()
+
+for cookie in f:
+    driver.add_cookie(cookie)
+
+with open('pickle.txt', 'rb') as file:
+    cookies = pickle.load(login_credientals, file)
+f.close()
+
+login_url = 'https://instagram/login'
+user_name = driver.find_element(By.XPATH, "//input[@aria-label='Phone number, username, or email']")
+user_name.send_keys("owlrapid123")
+password = driver.find_element(By.XPATH, "//input[@aria-label='Password']")
+password.send_keys("owlrap")
+login_button= driver.find_element(By.XPATH, "//button[@type='submit']")
+login_button.click()
+print("cookies save")
+driver.quit()
+
+login_url1 = 'https://facebook/login'
+user_name = driver.find_element(By.XPATH, '//input[@type="password" or @class="inputtext _55r1 _6luy _9npi"]')
+user_name.send_keys("owlrapid123")
+password = driver.find_element(By.XPATH, '//input[@type="password" or @class="inputtext _55r1 _6luy _9npi"]')
+password.send_keys("owlrap")
+login_button= driver.find_element(By.XPATH, '//button[@value="1" or @name="login" or @type="submit"]')
+login_button.click()
+print("cookies save")
+driver.quit()
+
+login_url2 = 'https://www.reddit.com/login/'
+user_name = driver.find_element(By.XPATH, '//input[@id="loginUsername" or @name="username"]')
+user_name.send_keys("owlrapid123")
+password = driver.find_element(By.XPATH, '//input[@id="loginPassword" or @type="password"]')
+password.send_keys("owlrap")
+login_button= driver.find_element(By.XPATH, '//button[@class="AnimatedForm__submitButton m-full-width" or @type="submit"]')
+login_button.click()
+print("cookies save")
+driver.quit()
+
+login_url3 = 'https://www.linkedin.com/home'
+user_name = driver.find_element(By.XPATH, '//input[contains(@name,"session_key")]')
+user_name.send_keys("aqsawaheed02@gmail.com")
+password = driver.find_element(By.XPATH, '//input[contains(@name,"session_password") or contains(@type, "password") ]')
+password.send_keys("aqsa9891")
+login_button= driver.find_element(By.XPATH, '//button[contains(@class,"btn-md btn-primary flex-shrink-0 cursor-pointer") or contains(@type,"submit")]')
+login_button.click()
+print("cookies save")
+driver.quit()
+
+login_url4 = 'https://twitter.com/login'
+user_name = driver.find_element(By.XPATH, '//input[@name="text"]')
+user_name.send_keys("Aqsa13699432")
+nxt_button = driver.find_element(By.XPATH, '//div[@class="css-1rynq56 r-bcqeeo r-qvutc0 r-37j5jr r-q4m81j r-a023e6 r-rjixqe r-b88u0q r-1awozwy r-6koalj r-18u37iz r-16y2uox r-1777fci"]/span/span[@class="css-1qaijid r-bcqeeo r-qvutc0 r-poiln3"]/span[@class="css-1qaijid r-bcqeeo r-qvutc0 r-poiln3"]/span[@class="css]')
+nxt_button.click()
+password = driver.find_element(By.XPATH, '//input[@name="password" or @type="password"]')
+password.send_keys("aq99wa01")
+login_button= driver.find_element(By.XPATH, '//div[@aria-disabled="true" or @data-testid="LoginForm_Login_Button"]')
+login_button.click()
+print("cookies save")
+driver.quit()
+
+if pickle.pickle == login_button:
+    print("Login successful!")
+else:
+    print(f"Login failed with status code {pickle.pickle}")
+    print(pickle.text)
+    
+    
+    
+    
+    
+    
+    from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import NoSuchElementException, ElementNotInteractableException, StaleElementReferenceException
+from urllib.parse import urlparse
+# Configure Chrome options
+chrome_options = Options()
+chrome_options.add_argument("--disable-notifications")  # Block notifications
+import time
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+import getpass
+import pandas as pd
+import pickle
+import os
+import urllib
+from PIL import Image
+from io import BytesIO
+from pprint import pprint
+import csv
+import loginid
+login_credientals = {
+    'Instagram': {'username': 'owlrapid123', 'password': 'owlrap'},  # Add other social accounts as needed
+    'Facebook': {'username': 'Aqsa Waheed', 'password': 'devvoops'},  # Add other social accounts as needed
+    'reddit': {'username': 'Aqsawaheed', 'password': 'aqsa0304'},  # Add other social accounts as needed
+    'linkedin': {'username': 'aqsawaheed02@gmail.com', 'password': 'aqsa9891'},  # Add other social accounts as needed
+    'twitter': {'username': 'aqsawaheed02@gmail.com', 'password': 'aqsa9891'},  # Add other social accounts as needed
+}
+driver=webdriver.Chrome(options=chrome_options)
+driver.get("https://www.instagram.com/")
+driver.maximize_window()
+wait = WebDriverWait(driver, 20)
+loginid = open("/home/aqsawaheed/Desktop/PythonProject/.venv/bin/chromedriver")
+user_name = driver.find_element(By.XPATH, "//input[@aria-label='Phone number, username, or email']")
+user_name.send_keys('owlrapid123')
+password = driver.find_element(By.XPATH, "//input[@aria-label='Password']")
+password.send_keys('owlrap')
+login = driver.find_element(By.XPATH, "//button[@type='submit']")
+login.click()
+time.sleep(6)
+# for facebook
+driver=webdriver.Chrome(options=chrome_options)
+driver.get("https://www.facebook.com/")
+driver.maximize_window()
+wait = WebDriverWait(driver, 20)
+loginid = open("/home/aqsawaheed/Desktop/PythonProject/.venv/bin/chromedriver")
+user_name = driver.find_element(By.XPATH, '//input[@type="text" or @aria-label="Email address or phone number"]')
+user_name.send_keys('Aqsa Waheed')
+password = driver.find_element(By.XPATH, '//input[@type="password" or @class="inputtext _55r1 _6luy _9npi"]')
+password.send_keys('devvoops')
+login = driver.find_element(By.XPATH, '//button[@value="1" or @name="login" or @type="submit"]')
+login.click()
+time.sleep(6)
+# for reddit
+driver=webdriver.Chrome(options=chrome_options)
+driver.get("https://www.reddit.com/login/")
+driver.maximize_window()
+wait = WebDriverWait(driver, 20)
+loginid = open("/home/aqsawaheed/Desktop/PythonProject/.venv/bin/chromedriver")
+user_name = driver.find_element(By.XPATH, '//input[@id="loginUsername" or @name="username"]')
+user_name.send_keys('Aqsawaheed')
+password = driver.find_element(By.XPATH, '//input[@id="loginPassword" or @type="password"]')
+password.send_keys('aqsa0304')
+login = driver.find_element(By.XPATH, '//button[@class="AnimatedForm__submitButton m-full-width" or @type="submit"]')
+login.click()
+time.sleep(6)
+# for linkedin
+driver=webdriver.Chrome(options=chrome_options)
+driver.get("https://www.linkedin.com/home")
+driver.maximize_window()
+wait = WebDriverWait(driver, 20)
+loginid = open("/home/aqsawaheed/Desktop/PythonProject/.venv/bin/chromedriver")
+user_name = driver.find_element(By.XPATH, '//input[contains(@name,"session_key")]')
+user_name.send_keys('aqsawaheed02@gmail.com')
+password = driver.find_element(By.XPATH, '//input[contains(@name,"session_password") or contains(@type, "password") ]')
+password.send_keys('aqsa9891')
+login = driver.find_element(By.XPATH, '//button[contains(@class,"btn-md btn-primary flex-shrink-0 cursor-pointer") or contains(@type,"submit")]')
+login.click()
+time.sleep(6)
+# for twitter
+driver=webdriver.Chrome(options=chrome_options)
+driver.get("https://twitter.com/login")
+driver.maximize_window()
+wait = WebDriverWait(driver, 10)
+time.sleep(2)
+loginid = open("/home/aqsawaheed/Desktop/PythonProject/.venv/bin/chromedriver")
+user_name = driver.find_element(By.XPATH, '//input[@name="text"]')
+user_name.send_keys('Aqsa13699432')
+time.sleep(2)
+nxt_button = driver.find_element(By.XPATH, '//div[contains(@style,"color: rgb(255, 255, 255); text-overflow: unset;")]')
+nxt_button.click()
+#  time.sleep(2)
+password = driver.find_element(By.XPATH, '//input[@name="password" or @type="password"]')
+password.send_keys('aq99wa01')
+time.sleep(2)
+login = driver.find_element(By.XPATH, '//div[@aria-disabled="true" or @data-testid="LoginForm_Login_Button"]')
+login.click()
